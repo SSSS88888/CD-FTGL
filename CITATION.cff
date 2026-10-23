@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "CD-FTGL: Decentralized Online Convex Optimization with Compressed Communication"
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/<your-org>/CD-FTGL"
+authors:
+  - family-names: Zhou
+    given-names: Hao
+  - family-names: Wang
+    given-names: Xiaoyu
+  - family-names: Yao
+    given-names: Chang
+  - family-names: Song
+    given-names: Mingli
+  - family-names: Wan
+    given-names: Yuanyu
+preferred-citation:
+  type: article
+  title: "Revisiting Decentralized Online Convex Optimization with Compressed Communication"
+  authors:
+    - family-names: Zhou
+      given-names: Hao
+    - family-names: Wang
+      given-names: Xiaoyu
+    - family-names: Yao
+      given-names: Chang
+    - family-names: Song
+      given-names: Mingli
+    - family-names: Wan
+      given-names: Yuanyu
+  year: 2026
+  journal: "arXiv preprint arXiv:2607.01665"
+  eprint: "2607.01665"
+  archive-prefix: arXiv
+  url: "https://arxiv.org/abs/2607.01665"

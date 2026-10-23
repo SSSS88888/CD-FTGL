@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env*
+
+# Generated artifacts
+figures/
+experiment/result/_reproduced/
+
+# Prepared datasets (see data/README.md); large raw files are not tracked
+data/data_*/
+
+# Tooling / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/

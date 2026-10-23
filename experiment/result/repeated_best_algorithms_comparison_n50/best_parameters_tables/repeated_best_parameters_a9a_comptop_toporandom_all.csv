@@ -1,0 +1,19 @@
+dataset, algorithm, T    , w   , L  , data_type, compressor_type, topology_type, h_coeff, eta_coeff, eps_coeff
+a9a    , CDFTGL   , 10000, 0.05,  10, full     , top            , random       ,  0.0001,          ,        
+a9a    , TopDOGD  , 10000, 0.05,  10, full     , top            , random       ,        ,     100.0,        
+a9a    , DCDOGD   , 10000, 0.05,    , full     , top            , random       ,        ,       0.01,        
+a9a    , CDFTGL   , 10000, 0.5 ,  10, full     , top            , random       ,  0.001 ,          ,        
+a9a    , TopDOGD  , 10000, 0.5 ,  10, full     , top            , random       ,        ,     100.0,        
+a9a    , DCDOGD   , 10000, 0.5 ,    , full     , top            , random       ,        ,      0.01,        
+a9a    , CDFTGL   , 10000, 0.1 ,  10, full     , top            , random       ,  0.001 ,          ,        
+a9a    , TopDOGD  , 10000, 0.1 ,  10, full     , top            , random       ,        ,     100.0,        
+a9a    , DCDOGD   , 10000, 0.1 ,    , full     , top            , random       ,        ,      0.01,        
+a9a    , CDFTGL   , 10000, 0.05, 100, bandit   , top            , random       ,  0.01  ,          ,       1.0
+a9a    , TopDOGD  , 10000, 0.05, 100, bandit   , top            , random       ,        ,    100.0,       1.0
+a9a    , DCDOGD   , 10000, 0.05,    , bandit   , top            , random       ,        ,       0.1,       1.0
+a9a    , CDFTGL   , 10000, 0.5 ,  10, bandit   , top            , random       ,  0.01  ,          ,       1.0
+a9a    , TopDOGD  , 10000, 0.5 , 100, bandit   , top            , random       ,        ,    100.0,       1.0
+a9a    , DCDOGD   , 10000, 0.5 ,    , bandit   , top            , random       ,        ,       0.1,       1.0
+a9a    , CDFTGL   , 10000, 0.1 ,  10, bandit   , top            , random       ,  0.01  ,          ,       1.0
+a9a    , TopDOGD  , 10000, 0.1 , 100, bandit   , top            , random       ,        ,    100.0,       1.0
+a9a    , DCDOGD   , 10000, 0.1 ,    , bandit   , top            , random       ,        ,       0.1,       1.0
