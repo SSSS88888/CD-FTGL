@@ -1,5 +1,7 @@
 # CD-FTGL — Decentralized Online Convex Optimization with Compressed Communication
 
+**English** · [简体中文](README.zh-CN.md)
+
 Official code and reproduction package for
 
 > **Revisiting Decentralized Online Convex Optimization with Compressed Communication**
