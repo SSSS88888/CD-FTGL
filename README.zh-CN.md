@@ -6,7 +6,7 @@
 
 > **Revisiting Decentralized Online Convex Optimization with Compressed Communication**
 > Hao Zhou, Xiaoyu Wang, Chang Yao, Mingli Song, Yuanyu Wan · 浙江大学
-> arXiv:2607.01665 —— <https://arxiv.org/abs/2607.01665>
+> Advances in Neural Information Processing Systems 39 (NeurIPS 2026) · arXiv:2607.01665
 
 论文针对带压缩通信的 D-OCO 提出两个 FTRL 型算法：
 
@@ -185,10 +185,13 @@ Apache License 2.0 —— 见 [LICENSE](LICENSE)。
 ## 引用
 
 ```bibtex
-@article{zhou2026revisiting,
-  title   = {Revisiting Decentralized Online Convex Optimization with Compressed Communication},
-  author  = {Zhou, Hao and Wang, Xiaoyu and Yao, Chang and Song, Mingli and Wan, Yuanyu},
-  journal = {arXiv preprint arXiv:2607.01665},
-  year    = {2026}
+@inproceedings{zhou2026revisiting,
+  title     = {Revisiting Decentralized Online Convex Optimization with Compressed Communication},
+  author    = {Zhou, Hao and Wang, Xiaoyu and Yao, Chang and Song, Mingli and Wan, Yuanyu},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {39},
+  year      = {2026}
 }
 ```
+
+预印本：[arXiv:2607.01665](https://arxiv.org/abs/2607.01665)。

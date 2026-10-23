@@ -3,7 +3,8 @@ message: "If you use this code, please cite the paper below."
 title: "CD-FTGL: Decentralized Online Convex Optimization with Compressed Communication"
 type: software
 license: Apache-2.0
-repository-code: "https://github.com/<your-org>/CD-FTGL"
+repository-code: "https://github.com/SSSS88888/CD-FTGL"
+url: "https://github.com/SSSS88888/CD-FTGL"
 authors:
   - family-names: Zhou
     given-names: Hao
@@ -16,7 +17,7 @@ authors:
   - family-names: Wan
     given-names: Yuanyu
 preferred-citation:
-  type: article
+  type: conference-paper
   title: "Revisiting Decentralized Online Convex Optimization with Compressed Communication"
   authors:
     - family-names: Zhou
@@ -30,7 +31,14 @@ preferred-citation:
     - family-names: Wan
       given-names: Yuanyu
   year: 2026
-  journal: "arXiv preprint arXiv:2607.01665"
-  eprint: "2607.01665"
-  archive-prefix: arXiv
+  collection-title: "Advances in Neural Information Processing Systems"
+  # volume 39 follows the NeurIPS proceedings numbering (2024 = 37, 2025 = 38);
+  # confirm against the official proceedings once published.
+  volume: 39
+  conference:
+    name: "Conference on Neural Information Processing Systems (NeurIPS)"
+  # The open-access preprint is kept as a fallback link until the proceedings
+  # / OpenReview URL and the DOI are available. Then add:
+  #   url: "https://openreview.net/forum?id=..."
+  #   doi: "10.xxxx/xxxxx"
   url: "https://arxiv.org/abs/2607.01665"
