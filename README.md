@@ -119,12 +119,12 @@ The figures above can be regenerated without training. To re-run the experiments
 python data/prepare_data.py            # writes data/data_a9a/A_a9a.npy, ... and data/data_ijcnn1/*
 ```
 
-**2. Grid search.** All commands are run from `experiment/` (the scripts use paths relative to it).
+**2. Grid search.** Every script resolves its paths relative to its own location, so any of the commands below can be
+run from the repository root (or anywhere else). Outputs go to `experiment/result/`.
 
 ```bash
-cd experiment
-python grid_search_algorithms.py       # n = 9,  T = 10000, T ∈ …, w ∈ {0.05, 0.1, 0.5}, seeds 42/123/456/789/1000
-python grid_search_algorithms_n50.py   # n = 50
+python experiment/grid_search_algorithms.py       # n = 9,  T = 10000, w ∈ {0.05, 0.1, 0.5}, seeds 42/123/456/789/1000
+python experiment/grid_search_algorithms_n50.py   # n = 50
 ```
 
 The configuration block at the top of each script selects dataset / compressor / topology / feedback type / grid;
@@ -133,13 +133,13 @@ completed runs are skipped automatically, so the search can be interrupted and r
 **3. Select hyper-parameters.**
 
 ```bash
-python compare_best_algorithms.py      # writes result/repeated_best_algorithms_comparison_*/best_parameters_tables/*.csv
+python experiment/compare_best_algorithms.py      # writes experiment/result/repeated_best_algorithms_comparison_*/best_parameters_tables/*.csv
 ```
 
 **4. Figures.**
 
 ```bash
-python reproduce_figures.py
+python experiment/reproduce_figures.py
 ```
 
 To regenerate the K-sensitivity study (Fig. 7-9) from scratch, set `L_PRIME_VALUES = [2, 5, 10, 20, 50]`

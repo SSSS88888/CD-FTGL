@@ -19,11 +19,15 @@ TOPOLOGY = 'random' # 拓扑结构
 FEEDBACK_TYPE = 'one-bandit'  # 反馈类型 [full, one-bandit']
 L_CHOICES = [100]  # 要筛选的L值列表，例如[100]表示只筛选L=100，[10, 100]表示筛选L=10和L=100
 
+# 所有路径都以本脚本所在目录为基准，因此可以在任意目录下运行
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+RESULT_DIR = os.path.join(SCRIPT_DIR, 'result')
+
 # 构建基础路径
 feedback_dir = 'bandit' if FEEDBACK_TYPE != 'full' else 'full'
 topology_dir = TOPOLOGY if TOPOLOGY != 'full' else 'fully_connected'
-base_path = f"result/grid_search_repeated_n9/{DATASET_NAME}/{COMPRESSOR_TYPE}/{topology_dir}/{feedback_dir}"
-BASE_SAVE_DIR = f"result/plots_Lp_comparison"
+base_path = os.path.join(RESULT_DIR, f"grid_search_repeated_n9/{DATASET_NAME}/{COMPRESSOR_TYPE}/{topology_dir}/{feedback_dir}")
+BASE_SAVE_DIR = os.path.join(RESULT_DIR, "plots_Lp_comparison")
 
 # 保存目录在绘图时创建（见 plot_best_results）
 

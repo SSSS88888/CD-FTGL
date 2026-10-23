@@ -8,6 +8,11 @@ import argparse
 # 将上级目录添加到Python路径
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+# 所有路径都以本脚本所在目录为基准，因此可以在任意目录下运行
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+RESULT_DIR = os.path.join(SCRIPT_DIR, 'result')
+DATA_DIR = os.path.join(SCRIPT_DIR, os.pardir, 'data')
+
 # 导入所需的模型类和参数类
 from parameter_TopDOGD import TopDOGDParameters
 from parameter_CDFTGL import CDFTGLParameters
@@ -43,7 +48,7 @@ ALGORITHMS_TO_RUN = ['CDFTGL']
 # 将拓扑结构为"full"的情况转换为"fully connected"，以与full information区分
 topology_dir = TOPOLOGY if TOPOLOGY != 'full' else 'fully_connected'
 feedback_dir = f"bandit" if FEEDBACK_TYPE != 'full' else f"full"
-os.makedirs(f'result/grid_search_repeated_n9/{DATASET_NAME}/{COMPRESSOR_TYPE}/{topology_dir}/{feedback_dir}', exist_ok=True)
+os.makedirs(os.path.join(RESULT_DIR, 'grid_search_repeated_n9', DATASET_NAME, COMPRESSOR_TYPE, topology_dir, feedback_dir), exist_ok=True)
 
 # 网格搜索参数设置
 T_VALUES = [10000]  # 时间步数 [10000, 50000]
@@ -72,23 +77,23 @@ L_PRIME_VALUES = None
 # 加载数据集
 def load_dataset(DATASET_NAME):
     if DATASET_NAME == 'HIGGS':
-        A = np.load('../data/data_HIGGS/A_HIGGS.npy')
-        y = np.load('../data/data_HIGGS/y_HIGGS.npy')
+        A = np.load(os.path.join(DATA_DIR, 'data_HIGGS', 'A_HIGGS.npy'))
+        y = np.load(os.path.join(DATA_DIR, 'data_HIGGS', 'y_HIGGS.npy'))
         print("# Number of features: 28")
         print(f"# Number of samples: 10999999")
     elif DATASET_NAME == 'a9a':
-        A = np.load('../data/data_a9a/A_a9a.npy')
-        y = np.load('../data/data_a9a/y_a9a.npy')
+        A = np.load(os.path.join(DATA_DIR, 'data_a9a', 'A_a9a.npy'))
+        y = np.load(os.path.join(DATA_DIR, 'data_a9a', 'y_a9a.npy'))
         print("# Number of features: 123")
         print(f"# Number of samples: 32561")
     elif DATASET_NAME == 'ijcnn1':
-        A = np.load('../data/data_ijcnn1/A_ijcnn1.npy')
-        y = np.load('../data/data_ijcnn1/y_ijcnn1.npy')
+        A = np.load(os.path.join(DATA_DIR, 'data_ijcnn1', 'A_ijcnn1.npy'))
+        y = np.load(os.path.join(DATA_DIR, 'data_ijcnn1', 'y_ijcnn1.npy'))
         print("# Number of features: 22")
         print(f"# Number of samples: 141691")
     elif DATASET_NAME == 'diabetes':
-        A = np.load('../data/data_diabetes/A_diabetes.npy')
-        y = np.load('../data/data_diabetes/y_diabetes.npy')
+        A = np.load(os.path.join(DATA_DIR, 'data_diabetes', 'A_diabetes.npy'))
+        y = np.load(os.path.join(DATA_DIR, 'data_diabetes', 'y_diabetes.npy'))
         print("# Number of features: 8")
         print(f"# Number of samples: 70692")
     else:
@@ -263,9 +268,9 @@ def generate_filename(model_type, T, w, coeff_name, coeff_value, L_value=None, L
         l_value_str = str(L_value).replace('.', '_')
         l_prime_value_str = str(L_prime_value).replace('.', '_')
         l_dir = f"L={l_value_str}_L'={l_prime_value_str}"
-        return f"result/grid_search_repeated_n9/{DATASET_NAME}/{COMPRESSOR_TYPE}/{topology_dir}/{feedback_dir}/{l_dir}/{base_name}"
+        return os.path.join(RESULT_DIR, 'grid_search_repeated_n9', DATASET_NAME, COMPRESSOR_TYPE, topology_dir, feedback_dir, l_dir, base_name)
     else:
-        return f"result/grid_search_repeated_n9/{DATASET_NAME}/{COMPRESSOR_TYPE}/{topology_dir}/{feedback_dir}/{base_name}"
+        return os.path.join(RESULT_DIR, 'grid_search_repeated_n9', DATASET_NAME, COMPRESSOR_TYPE, topology_dir, feedback_dir, base_name)
 
 # 定义任务类型
 class ExperimentTask:

@@ -9,6 +9,8 @@ venv/
 # Generated artifacts
 figures/
 experiment/result/_reproduced/
+experiment/result/plots_best_multiple_runs_*/
+experiment/result/plots_Lp_comparison/
 
 # Prepared datasets (see data/README.md); large raw files are not tracked
 data/data_*/
